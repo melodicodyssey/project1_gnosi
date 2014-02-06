@@ -1,0 +1,11 @@
+<h1> User Feed </h1>
+
+<p style="color: green"><%= flash[:success] %></p>
+
+<%= @user.given_name %></br>
+<%= @user.email %></br>
+<img src=<%=@user.picture%>></img>
+</br>
+<%= button_to "History", history_path(@user.id), method: 'get' %>
+
+<%= binding.pry %>

@@ -1,0 +1,14 @@
+<h1> User History </h1>
+
+<%= @user.name %> </br>
+<%= @user.email %> </br></br>
+
+<% @links.each do |link| %>
+	<%= link.title %></br>
+	<%= link.url %></br>
+	<%= link.vote %></br>
+	<%= link.comments %>
+<% end %>
+
+<%= button_to "Feed", feed_path(@user.id), method: 'get' %>
+<%= button_to "Signout", "/sessions/#{@user.id}", method: 'delete' %>
