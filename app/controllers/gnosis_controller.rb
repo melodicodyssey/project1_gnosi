@@ -9,7 +9,7 @@ class GnosisController < ApplicationController
 
 
 	def index
-    binding.pry
+
     # check to see if user was redirected from Feedly
     # if not, render 'index' immediately
     # if so, run below code (set @user) then render 'feed.html.erb'
@@ -24,11 +24,11 @@ class GnosisController < ApplicationController
           end
             sign_in @user
             flash[:success] = "You have successfully logged in to Feedly!"
-    binding.pry
             # redirect_to feed_path(@user.uid)
     end
+    binding.pry
   end
-
+# rm -rf .git
 
   def auth_failure
     flash[:no_auth] = "Feedly authentication failed"
@@ -47,7 +47,7 @@ class GnosisController < ApplicationController
 
   def history
     uid = params[:uid]
-    # @user = User.find_by_uid(uid)
+    @user = User.find_by_uid(uid)
     # @links = Link.where(user_id: @user.id)
   end
 
