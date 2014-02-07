@@ -22,7 +22,7 @@
 				      </div>
 				      <div class="modal-body">
 				      	<div class="input">
-				      	<%= form_for @link do |f| %>
+				      	<%= form_for @link, url: {controller: 'links', action: 'create'} do |f| %>
 				      		<%= f.text_field :title, value: stream['title'] %></br>
 				      		<%= f.text_field :url, value: stream['alternate'][0]['href'] %></br>
  						</div>
