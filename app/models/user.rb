@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-
+	before_save :create_remember_token
 
 	#MAKE TOKEN NUMBERS SECRET: DEFINE THEM IN .env FILE AND PLACE THEM HERE
 
@@ -31,7 +31,6 @@ class User < ActiveRecord::Base
 
 		# save the user
 		user.save
-		binding.pry
 		return user
 	end
 
@@ -50,12 +49,11 @@ class User < ActiveRecord::Base
 		request = JSON.parse(Typhoeus.get("https://sandbox.feedly.com/v3/#{type}", headers: {Authorization: self.auth_token}).body)
 	end
 
-	before_save :create_remember_me_token
 
 	private
 
-	def create_remember_me_token
-		self.remember_me_token = SecureRandom.urlsafe_base64
+	def create_remember_token
+		self.remember_token = SecureRandom.urlsafe_base64
 	end
 
 end

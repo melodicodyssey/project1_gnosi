@@ -2,8 +2,3 @@
 
 <%= @user['given_name'] %> </br>
 <%= @user['email'] %> </br></br>
-
-
-
-<%= button_to "Feed", feed_path(@user.id), method: 'get' %>
-<%= button_to "Signout", "/sessions/#{@user.id}", method: 'delete' %>

@@ -1,5 +1,7 @@
 body {
-	background-image: url('tree-of-knowledge-1600x1200.jpg');
+	background-image: url('/stylesheets/tree-of-knowledge-1600x1200.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
 	background-size: 100%;
 	color: white;
 }

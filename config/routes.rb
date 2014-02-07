@@ -1,19 +1,19 @@
 Gnosi::Application.routes.draw do
 
-	resources :users, :sessions, :gnosis
+	# resources :users, :sessions, :gnosis
 
 	root to: 'gnosis#index', as: :index
 	
-	get '/start', to: 'gnosis#index'
+	get '/start', to: 'gnosis#index', as: :start
 
 
 	get '/auth/feedly/callback', to: 'sessions#create'
 	get '/auth/failure', to: 'gnosis#auth_failure'
 
-	# get '/signup', to: 'users#new', as: :signup
-	# get '/signin', to: 'sessions#new', as: :signin
+	get '/sessions/:uid', to: 'sessions#create', as: :create_session
+	# post '/sessions/', to: 'sessions#create', as: :create_session
+
 	get '/signout', to: 'sessions#destroy', as: :signout	
-	post '/sessions/', to: 'sessions#create', as: :create_session
 	get '/gnosi/feed/:uid', to: 'gnosis#feed', as: :feed
 	get '/gnosi/history/:uid', to: 'gnosis#history', as: :history
 	
@@ -68,29 +68,9 @@ end
 
 					# do something with 'stream'
 
+
 				end
-				
+
 			end
 
-
-
-				
-
-
-
-
-Get a stream!
-
-
-	streamID = parsed_response_from_search
-
-
-	enc = CGI::escape(streamID)
-
-		=> "feed%2Fhttp%3A%2F%2Ffeeds.feedburner.com%2FTechcrunch"
-
-
-
-
-		Xne8uW/IUiZhV1EuO2ZMzIrc2Ak6NlhGjboZ+Yk0rJ8=_144083a8aeb:3017:1bfdab35
 =end

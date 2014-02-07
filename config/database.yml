@@ -8,7 +8,6 @@ development:
   encoding: unicode
   database: gnosi_development
   pool: 5
-  password:
 
 # database.sqlite3
 
@@ -20,11 +19,9 @@ test:
   encoding: unicode
   database: gnosi_test
   pool: 5
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: gnosi
   pool: 5
-  password:

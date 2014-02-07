@@ -77,4 +77,13 @@ Gnosi::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+
+# to get css background-image to show on Heroku
+config.cache_classes = true
+config.serve_static_assets = true
+config.assets.compile = true
+config.assets.digest = true
+
+
 end

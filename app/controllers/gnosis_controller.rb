@@ -12,23 +12,20 @@ class GnosisController < ApplicationController
 
     # check to see if user was redirected from Feedly
     # if not, render 'index' immediately
-    # if so, run below code (set @user) then render 'feed.html.erb'
+    # if so, run below code (set @user) then create new session
 
     unless request.env['omniauth.auth'].nil?
-        @code = params['code']
-        user = User.find_by_uid(request.env['omniauth.auth']['uid'])
-          if user.nil?
-            @user = User.create_new(request.env['omniauth.auth'], @code)
-          else
-            @user = User.update_token(request.env['omniauth.auth'])
-          end
-            sign_in @user
-            flash[:success] = "You have successfully logged in to Feedly!"
-            # redirect_to feed_path(@user.uid)
+      code = params['code']
+      user = User.find_by_uid(request.env['omniauth.auth']['uid'])
+        if user.nil?
+          user = User.create_new(request.env['omniauth.auth'], code)
+        else
+          user = User.update_token(request.env['omniauth.auth'])
+        end
+      redirect_to create_session_path(user['uid'])
     end
-    binding.pry
+    @user = current_user
   end
-# rm -rf .git
 
   def auth_failure
     flash[:no_auth] = "Feedly authentication failed"
@@ -42,7 +39,6 @@ class GnosisController < ApplicationController
     # then redirect to 'feed.html.erb'
     uid = params[:uid]
     @user = User.find_by_uid(uid)
-    @profile = @user.get_request('profile')
   end
 
   def history
