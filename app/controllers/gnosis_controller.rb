@@ -1,11 +1,4 @@
 class GnosisController < ApplicationController
-	
-	# before_filter :signed_in?, only (:feed, :history)
-
-	# post root "/" to sessions#create
-
-  # http://radiant-oasis-5288.herokuapp.com
-
 
 	def index
 
@@ -23,8 +16,9 @@ class GnosisController < ApplicationController
         end
       redirect_to create_session_path(user['uid'])
     end
+    
     @user = current_user
-    @topics = ['Tech','Design','Photography','Do It Yourself', 'Cooking', 'Gaming','News']
+    @topics = ['Tech','Design', 'News', 'Photography','Do It Yourself', 'Cooking']
 
   end
 

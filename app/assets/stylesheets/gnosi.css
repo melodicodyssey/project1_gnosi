@@ -1,11 +1,11 @@
 body {
 	background: url('tree-of-knowledge-1600x1200.jpg');
-	background-position: center center;
+	background-position: bottom center;
 	background-repeat: no-repeat;
-
 	width: 100%;
 	color: white;
 	background-attachment: fixed;
+	font-family: 'Basic', sans-serif;
 }
 
 h1 {
@@ -18,25 +18,51 @@ h1 {
 	color: black
 }
 
+.mod {
+	margin: 10px;
+}
+
+.modal-body {
+	font-size: 25px;
+}
+
 .stream {
 	border: 1px solid white;
 	background-color: rgba(0,0,0,0.6);
 	margin: 5px;
 	border-radius: 5px;
-	width: 350px;
-	height: 306px;
+	width: 370px;
+	height: 330px;
 	padding: 0 20px 20px 20px;
 }
 
 .stream_text {
 	opacity: 1;
+	text-align: left;
+	overflow: auto;
+	height: 160px;
 }
 
 .stream img {
 	height: 150px;
-	width: 100px;
+	width: 120px;
 	float: left;
 	margin-right: 5px;
+	border-radius: 30px;
+}
+
+.full-frame {
+	display: none;
+}
+
+.title_input .plus {
+	float: right;
+}
+
+@media (min-width: 1200px) {
+	body {
+		background-size: 100%;
+	}
 }
 
 @media (max-width: 800px) {

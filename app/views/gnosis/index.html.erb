@@ -1,23 +1,21 @@
+<% if signed_in? %>
 <h1>Welcome to Gnosi!</h1>
-<p style="color: red"><%= flash[:no_auth] %></p>
-
-
-<p></p>
+<% end %>
+<p style="color: red"><%= flash[:no_auth] %></p></br>
 
 <p style="color: #aaffaa"><%= flash[:success] %></p>
 
 
-<!--link_to "sign in with feedly"    button redirects to "/auth/feedly" -->
+<!-- Generate Modals -->
 
 <% if signed_in? %>
 
 <div class="topics" style="text-align: center">
 	<% i = 0 %>
 
-
 <% @topics.each do |topic| %>
 <!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%=i%>">
+<button class="btn btn-primary btn-lg mod" data-toggle="modal" data-target="#myModal<%=i%>">
   <%= topic %>
 </button>
 
@@ -27,7 +25,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel<%=i%>"><%= topic %></h4>
+        <h4 class="modal-title" id="myModalLabel<%=i%>"><%= topic %> Feeds</h4>
       </div>
       <div class="modal-body">
         <% search_topic(topic).each do |feed| %>
@@ -36,8 +34,7 @@
         <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

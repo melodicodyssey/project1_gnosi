@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-# map post '/' to sessions#create
-
   def create
 
 	user = User.find_by_uid(params[:uid])
