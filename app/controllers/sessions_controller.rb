@@ -15,5 +15,4 @@ class SessionsController < ApplicationController
 	redirect_to start_path
   end
 
-
 end

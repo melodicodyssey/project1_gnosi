@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
 
 	before_save :create_remember_token
 
-	#MAKE TOKEN NUMBERS SECRET: DEFINE THEM IN .env FILE AND PLACE THEM HERE
-
 	def self.create_new result, code
 
 		# set new User with parameters pulled from response from Feedly login
@@ -59,6 +57,3 @@ class User < ActiveRecord::Base
 	end
 
 end
-
-# 1d39dcfc-10d7-4ad8-a12f-29e1c22a1eef		checks
-# 1d39dcfc-10d7-4ad8-a12f-29e1c22a1eef		out
