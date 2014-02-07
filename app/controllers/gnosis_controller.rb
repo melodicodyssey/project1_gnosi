@@ -27,7 +27,6 @@ class GnosisController < ApplicationController
     @title = params[:title]
     @streams = fetch_stream(feed)['items']
     @link = Link.new()
-    binding.pry
   end
 
   def add_new_link
