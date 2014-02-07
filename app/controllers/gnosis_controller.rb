@@ -32,7 +32,8 @@ class GnosisController < ApplicationController
     # uid = params[:uid]
     # @user = User.find_by_uid(uid)
     feed = params[:feed]
-    # @feed = get_stream_ids(feed)
+    @stream_ids = fetch_stream(feed)
+    binding.pry
   end
 
   def history
