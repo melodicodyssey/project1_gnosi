@@ -1,9 +1,9 @@
 <h1>Welcome to Gnosi!</h1>
 <p style="color: red"><%= flash[:no_auth] %></p>
 
-<% if signed_in? %>
+
 <%= button_to "Sign in to Feedly", "auth/feedly", {class: "button button-lg"} %>
-<% end %>
+
 <p style="color: #aaffaa"><%= flash[:success] %></p>
 
 
