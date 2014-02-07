@@ -25,6 +25,7 @@ class GnosisController < ApplicationController
       redirect_to create_session_path(user['uid'])
     end
     @user = current_user
+    
   end
 
   def auth_failure
