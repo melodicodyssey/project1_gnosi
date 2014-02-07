@@ -4,7 +4,6 @@ class GnosisController < ApplicationController
 
 	# post root "/" to sessions#create
 
-
   # http://radiant-oasis-5288.herokuapp.com
 
 
@@ -30,20 +29,12 @@ class GnosisController < ApplicationController
     binding.pry
   end
 
-  def auth_failure
-    flash[:no_auth] = "Feedly authentication failed"
-    render 'index'
-  end
-
-
-
   def feed
-    # fetch user profile from Feedly via Typhoeus
-    # then redirect to 'feed.html.erb'
-    uid = params[:uid]
+    binding.pry
+    # uid = params[:uid]
+    # @user = User.find_by_uid(uid)
     feed = params[:feed]
-    @user = User.find_by_uid(uid)
-    @feed = get_stream_ids(feed)
+    # @feed = get_stream_ids(feed)
   end
 
   def history

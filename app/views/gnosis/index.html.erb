@@ -31,8 +31,8 @@
       </div>
       <div class="modal-body">
         <% search_topic(topic).each do |feed| %>
-        <% encoded = CGI::escape(feed['feedId']) %>
-        <a href="/gnosis/<%=@user['uid']%>/<%=encoded%>"></p><%=feed['title']%></p></a>
+        <% encoded = CGI.escape(feed['feedId']) %>
+        <a href="/gnosi/feeds/<%=encoded%>"></p><%=feed['title']%></p></a>
         <% end %>
       </div>
       <div class="modal-footer">
