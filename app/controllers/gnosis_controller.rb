@@ -16,7 +16,7 @@ class GnosisController < ApplicationController
         end
       redirect_to create_session_path(user['uid'])
     end
-    
+
     @user = current_user
     @topics = ['Tech','Design', 'News', 'Photography','Do It Yourself', 'Cooking']
 
@@ -24,13 +24,20 @@ class GnosisController < ApplicationController
 
   def feed
     feed = params[:feed]
+    @title = params[:title]
     @streams = fetch_stream(feed)['items']
+    @link = Link.new()
     binding.pry
+  end
+
+  def add_new_link
+    link = Link.create()
   end
 
   def history
     uid = params[:uid]
     @user = User.find_by_uid(uid)
+    @links = @user.links
     # @links = Link.where(user_id: @user.id)
   end
 

@@ -30,7 +30,7 @@
       <div class="modal-body">
         <% search_topic(topic).each do |feed| %>
         <% encoded = CGI.escape(feed['feedId']) %>
-        <a href="/gnosi/feeds/<%=encoded%>"></p><%=feed['title']%></p></a>
+        <a href="/gnosi/feeds/<%=feed['title']%>/<%=encoded%>"></p><%=feed['title']%></p></a>
         <% end %>
       </div>
       <div class="modal-footer">

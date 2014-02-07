@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+	has_many :links
+
 	before_save :create_remember_token
 
 	#MAKE TOKEN NUMBERS SECRET: DEFINE THEM IN .env FILE AND PLACE THEM HERE

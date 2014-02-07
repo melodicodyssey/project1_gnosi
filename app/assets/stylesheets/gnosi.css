@@ -55,8 +55,25 @@ h1 {
 	display: none;
 }
 
+.title_input {
+	color: black;
+}
+
 .title_input .plus {
 	float: right;
+}
+
+.input {
+	font-size: 10px;
+}
+
+.history {
+	border: 1px solid white;
+	background-color: rgba(0,0,0,0.6);
+	margin: 5px;
+	border-radius: 5px;
+
+	padding: 0 20px 20px 20px;
 }
 
 @media (min-width: 1200px) {

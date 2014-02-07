@@ -2,3 +2,11 @@
 
 <%= @user['given_name'] %> </br>
 <%= @user['email'] %> </br></br>
+
+<% @links.each do |link| %>
+<div class="history">
+<h4><a href=<%=link['url']%>><%= link['title'] %></a></h4></br>
+<p><%= link['comments'] %></br></p>
+<%= link['created_at'] %>
+</div>
+<% end %>

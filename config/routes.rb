@@ -1,6 +1,7 @@
 Gnosi::Application.routes.draw do
 
 	# resources :users, :sessions, :gnosis
+	resources :links
 
 	root to: 'gnosis#index', as: :index
 	
@@ -14,7 +15,8 @@ Gnosi::Application.routes.draw do
 	# post '/sessions/', to: 'sessions#create', as: :create_session
 
 	get '/signout', to: 'sessions#destroy', as: :signout	
-	get '/gnosi/feeds/:feed', to: 'gnosis#feed', :constraints => { feed: /[0-9A-Za-z\-\.\%]+/ }
+	get '/gnosi/feeds/:title/:feed', to: 'gnosis#feed', :constraints => { feed: /[0-9A-Za-z\-\.\%]+/ }
+
 
 	get '/gnosi/history/:uid', to: 'gnosis#history', as: :history
 	
