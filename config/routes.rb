@@ -14,7 +14,7 @@ Gnosi::Application.routes.draw do
 	# post '/sessions/', to: 'sessions#create', as: :create_session
 
 	get '/signout', to: 'sessions#destroy', as: :signout	
-	get '/gnosi/feed/:uid', to: 'gnosis#feed', as: :feed
+	get '/gnosi/feed/:uid/:topic', to: 'gnosis#feed', as: :feed
 	get '/gnosi/history/:uid', to: 'gnosis#history', as: :history
 	
 end
@@ -38,12 +38,12 @@ end
 
 
 
-	#or each Feed ID:
+	# For each Feed ID:
 
-		#To Get Stream ID's and Streams
+		#To Get Stream ID's from a Feed Id
 
-			search(topic).each do |topic|
-				enc = CGI::escape(topic['feedId'])
+			search(topic).each do |feed|
+				enc = CGI::escape(feed['feedId'])
 
 				streamIDs = JSON.parse(
 					Typhoeus.get(
@@ -54,10 +54,11 @@ end
 
 					#=> returns array of stream ID's
 
+				# To Get Streams from Stream ID's
 
 				streamIDs.each do |id|
 
-					id_enc = CGI::escape(id_enc)
+					id_enc = CGI::escape(id)
 
 					stream = JSON.parse(
 						Typhoeus.get(
@@ -67,6 +68,9 @@ end
 					)
 
 					# do something with 'stream'
+
+					# each result (I got 10 from just querying one stream)
+					# 
 
 
 				end

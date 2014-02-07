@@ -29,7 +29,6 @@
             <li class="active"><a href="auth/feedly">Connect to Feedly</a></li>
             <% end %>
             <% if signed_in? %>
-            <li><a href="/gnosi/feed/<%=current_user.uid%>">Feed</a></li>
             <li><a href="/gnosi/history/<%=current_user.uid%>">History</a></li>
           <li><img src=<%= current_user.picture %> style="border-radius: 50px"></img>
             <li><a href="/signout">Sign Out</a></li>
@@ -58,5 +57,7 @@
     
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/stylesheets/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js">;
+</script>
   </body>
 </html>

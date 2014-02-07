@@ -2,9 +2,47 @@
 <p style="color: red"><%= flash[:no_auth] %></p>
 
 
-<%= button_to "Sign in to Feedly", "auth/feedly", {class: "button button-lg"} %>
+<p></p>
 
 <p style="color: #aaffaa"><%= flash[:success] %></p>
 
 
 <!--link_to "sign in with feedly"    button redirects to "/auth/feedly" -->
+
+<% if signed_in? %>
+
+<div class="topics" style="text-align: center">
+	<% i = 0 %>
+
+
+<% @topics.each do |topic| %>
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal<%=i%>">
+  <%= topic %>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal<%=i%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel<%=i%>"><%= topic %></h4>
+      </div>
+      <div class="modal-body">
+        <% search_topic(topic).each do |feed| %>
+        <% encoded = CGI::escape(feed['feedId']) %>
+        <a href="/gnosis/<%=@user['uid']%>/<%=encoded%>"></p><%=feed['title']%></p></a>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% i+= 1 %>
+<% end %>
+
+<% end %>

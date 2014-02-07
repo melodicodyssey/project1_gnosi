@@ -9,4 +9,15 @@ body {
 h1 {
 	color: white;
 	size: 40px;
+	text-align: left;
+}
+
+.topics {
+	color: black;
+}
+
+@media (max-width: 800px) {
+	topics {
+		display: block;
+	}
 }

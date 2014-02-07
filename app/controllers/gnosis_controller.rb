@@ -25,7 +25,9 @@ class GnosisController < ApplicationController
       redirect_to create_session_path(user['uid'])
     end
     @user = current_user
-    
+    @topics = ['Tech','Design','Photography','Do It Yourself','Gaming','News']
+
+    binding.pry
   end
 
   def auth_failure
@@ -39,7 +41,9 @@ class GnosisController < ApplicationController
     # fetch user profile from Feedly via Typhoeus
     # then redirect to 'feed.html.erb'
     uid = params[:uid]
+    feed = params[:feed]
     @user = User.find_by_uid(uid)
+    @feed = get_stream_ids(feed)
   end
 
   def history
