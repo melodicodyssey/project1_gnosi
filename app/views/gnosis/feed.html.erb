@@ -1,4 +1,16 @@
-<h1> Feed </h1>
+<h1> Feeds </h1>
+<center>
+<div class="container">
+	<div class="row">
+		<% @streams.each do |stream| %>
+			<div class="stream col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<h3 class="stream_text"><a href=<%=stream['alternate'][0]['href']%>><%=stream['title']%></a></h3>
+				<h5 class="stream_text"><%=stream['author']%></h5</br>
+				<%= stream['summary']['content'].html_safe%>
+			</div>
+		<% end %>
+	</div>
+</div
+</center>
 
-<h1>Welcome to the Feed page</h1>
 <% binding.pry %>

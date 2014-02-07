@@ -24,15 +24,13 @@ class GnosisController < ApplicationController
       redirect_to create_session_path(user['uid'])
     end
     @user = current_user
-    @topics = ['Tech','Design','Photography','Do It Yourself','Gaming','News']
+    @topics = ['Tech','Design','Photography','Do It Yourself', 'Cooking', 'Gaming','News']
 
   end
 
   def feed
-    # uid = params[:uid]
-    # @user = User.find_by_uid(uid)
     feed = params[:feed]
-    @stream_ids = fetch_stream(feed)
+    @streams = fetch_stream(feed)['items']
     binding.pry
   end
 
