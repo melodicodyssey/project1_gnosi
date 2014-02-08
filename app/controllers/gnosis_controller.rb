@@ -22,6 +22,11 @@ class GnosisController < ApplicationController
 
   end
 
+  def auth_failure
+    flash[:no_auth] = "Invalid login credentials"
+    redirect_to start_path
+  end
+
   def feed
     feed = params[:feed]
     @title = params[:title]
