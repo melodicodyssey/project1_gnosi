@@ -1,11 +1,16 @@
-<% if signed_in? %>
+<% unless signed_in? %>
 <h1>Welcome to Gnosi!</h1>
+  Gnosi is a web application using the Feedly API that lets you easily access new articles and information pertaining to whichever topic you like!
+</p>
+<p>
+  Just click "Connect to Feedly" in the Navbar at the top of this page to get started!
+</p>
 <% end %>
 <p style="color: red"><%= flash[:no_auth] %></p></br>
 
 <p style="color: #aaffaa"><%= flash[:success] %></p>
 
-
+<p class="desc">
 <!-- Generate Modals -->
 
 <% if signed_in? %>

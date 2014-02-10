@@ -1,17 +1,36 @@
 body {
-	background: url('tree-of-knowledge-1600x1200.jpg');
-	background-position: bottom center;
-	background-repeat: no-repeat;
-	width: 100%;
-	color: white;
-	background-attachment: fixed;
-	font-family: 'Basic', sans-serif;
+	/*background: url('tree-of-knowledge-1600x1200.jpg');*/
+	/*background-position: bottom center;*/
+	/*background-repeat: no-repeat;*/
+	/*background-attachment: fixed;*/
+	/*width: 100%;*/
+	background: #FFF8DC;
+	color: #1F1209;
+	/*font-family: 'Basic', sans-serif;*/
+	font-family: 'Artifika', serif;
 }
 
+.navbar {
+	background: #834C24;
+	text-shadow: 2px 2px #FFF8DC;
+}
+
+.user_img {
+	border-radius: 50px;
+	border: 1px solid #FFF8DC;
+}
+
+/* 
+	1F1209 dark
+	003366 blue
+	FFF8Dc cream
+	834C24 brown
+	*/
+
 h1 {
-	color: white;
 	size: 40px;
 	text-align: left;
+	font-family: 'Artifika', serif;
 }
 
 .topics {
@@ -27,28 +46,35 @@ h1 {
 }
 
 .stream {
-	border: 1px solid white;
-	background-color: rgba(0,0,0,0.6);
+	border: 1px solid #003366;
+	background-color: rgba(240,240,240,0.6);
 	margin: 5px;
 	border-radius: 5px;
 	width: 370px;
 	height: 330px;
 	padding: 0 20px 20px 20px;
+	text-align: left;
+}
+
+.title_link {
+	text-align: left;
+	font-size: 20px;
 }
 
 .stream_text {
 	opacity: 1;
 	text-align: left;
-	overflow: auto;
-	height: 160px;
+	overflow: scroll;
+	/*height: 160px;*/
 }
 
 .stream img {
-	height: 150px;
-	width: 120px;
+	height: 100px;
+	width: 100px;
 	float: left;
 	margin-right: 5px;
 	border-radius: 30px;
+	display: none;
 }
 
 .full-frame {
@@ -56,7 +82,8 @@ h1 {
 }
 
 .title_input {
-	color: black;
+	color: #1F1209
+	border-bottom: 1px solid #003366;
 }
 
 .title_input .plus {
@@ -65,6 +92,7 @@ h1 {
 
 .input {
 	font-size: 10px;
+	display: none;
 }
 
 .history {
