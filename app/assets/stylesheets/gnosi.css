@@ -68,13 +68,17 @@ h1 {
 	/*height: 160px;*/
 }
 
+.article {
+	overflow: scroll;
+}
+
 .stream img {
 	height: 100px;
 	width: 100px;
 	float: left;
 	margin-right: 5px;
 	border-radius: 30px;
-	display: none;
+	/*display: none;*/
 }
 
 .full-frame {
@@ -91,13 +95,17 @@ h1 {
 }
 
 .input {
-	font-size: 10px;
+	font-size: 9px;
 	display: none;
 }
 
+textarea {
+	font-size: 12px;
+}
+
 .history {
-	border: 1px solid white;
-	background-color: rgba(0,0,0,0.6);
+	border: 1px solid #003366;
+	background-color: rgba(240,240,240,0.6);
 	margin: 5px;
 	border-radius: 5px;
 
