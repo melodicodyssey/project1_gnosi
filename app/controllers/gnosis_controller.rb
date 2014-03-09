@@ -7,12 +7,14 @@ class GnosisController < ApplicationController
     # if so, run below code (set @user) then create new session
 
     unless request.env['omniauth.auth'].nil?
-      code = params['code']
-      user = User.find_by_uid(request.env['omniauth.auth']['uid'])
-        if user.nil?
-          user = User.create_new(request.env['omniauth.auth'], code)
+      code = params['code'] ;  env = request.env['omniauth.auth']
+      if User.find_by_uid(env['uid']).nil?
+          user = User.create_new(env, code)
+          # enc = CGI.escape(env)
+          # redirect_to create_user_path(code, env)
         else
-          user = User.update_token(request.env['omniauth.auth'])
+          user = User.update_token(env)
+          # redirect_to update_path(enc)
         end
       redirect_to create_session_path(user['uid'])
     end
@@ -42,7 +44,6 @@ class GnosisController < ApplicationController
     uid = params[:uid]
     @user = User.find_by_uid(uid)
     @links = @user.links
-    # @links = Link.where(user_id: @user.id)
   end
 
 end

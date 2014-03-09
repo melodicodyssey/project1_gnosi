@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
         picture: result['extra']['raw_info']['picture'],
         auth_token: result['credentials']['token'],
         refresh_token: result['credentials']['refresh_token']
-      )
+      	)
 
 		# use auth_token to request a refresh_token from Feedly
 		# add refresh_token to user
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 		parsed_use_refresh = JSON.parse(use_refresh.body)
 		user.update_attributes(access_token: parsed_use_refresh['access_token'])
 
-		# save the user
+		# save the user - create remember_token
 		user.save
 		return user
 	end

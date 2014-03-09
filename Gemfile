@@ -61,7 +61,13 @@ gem 'pry'
 
 gem 'foreman'
 
-group :development do
+group :development, :test do
+	gem 'dotenv-rails'
+	gem 'rspec-rails', '~> 3.0.0.beta'
+	gem 'launchy'
+	gem 'database_cleaner'
+	gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i  
+
 	gem 'better_errors'
 	gem 'binding_of_caller'
 	# gem 'quiet_assets'
