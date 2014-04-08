@@ -4,9 +4,14 @@
 <%= @user['email'] %> </br></br>
 
 <% @links.each do |link| %>
-<div class="history">
-<h4><a href=<%=link['url']%>><%= link['title'] %></a></h4></br>
-<p><%= link['comments'] %></br></p>
-<%= link['created_at'] %>
-</div>
+  <div class="history">
+    <h4><a href=<%=link['url']%>><%= link['title'] %></a></h4></br>
+    <% paragraphs = link['comments'].split("\r\n\r\n") %>
+    <div class="comment-pgs">
+      <% paragraphs.each do |paragraph| %>
+      <p><%= paragraph %></p></br>
+      <% end %></br>
+    </div>
+    <%= link['created_at'] %>
+  </div>
 <% end %>
