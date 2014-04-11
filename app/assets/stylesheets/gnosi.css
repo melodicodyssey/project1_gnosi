@@ -4,21 +4,28 @@ body {
 	/*background-repeat: no-repeat;*/
 	/*background-attachment: fixed;*/
 	/*width: 100%;*/
-	background: #FFF8DC;
+	/*background: #FFF8DC;*/
+	background: #FFFFFF;
 	color: #1F1209;
 	/*font-family: 'Basic', sans-serif;*/
 	font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+	margin-top: 100px;
 }
 
 .navbar {
-	background: #834C24;
+	background: #000000;
 	text-shadow: 2px 2px #FFF8DC;
 	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	position: absolute;
+}
+
+.navbar li {
+	margin-top: 15px;
 }
 
 .user_img {
 	border-radius: 50px;
-	border: 1px solid #FFF8DC;
+	border: 2px solid #FFF8DC;
 }
 
 /* 
@@ -50,9 +57,11 @@ h1 {
 	border: 1px solid #003366;
 	background-color: rgba(240,240,240,0.6);
 	margin: 5px;
-	border-radius: 5px;
-	width: 370px;
-	height: 330px;
+	border-radius: 0px;
+	/*width: 370px;*/
+	/*height: 330px;*/
+	width: 260px;
+	height: 300px;
 	padding: 0 20px 20px 20px;
 	text-align: left;
 }
@@ -74,12 +83,19 @@ h1 {
 }
 
 .stream img {
+	border: 1px solid black;
 	height: 100px;
 	width: 100px;
 	float: left;
-	margin-right: 5px;
-	border-radius: 30px;
+	margin-right: 10px;
+	border-radius: 2px;
+	margin-top: 3px;
 	/*display: none;*/
+}
+
+.stream iframe {
+	height: 142px;
+	width: 254px;
 }
 
 .full-frame {
@@ -98,6 +114,7 @@ h1 {
 .input {
 	font-size: 9px;
 	display: none;
+	text-align: center;
 }
 
 textarea {
