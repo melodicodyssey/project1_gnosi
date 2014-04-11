@@ -9,12 +9,18 @@ body {
 	color: #1F1209;
 	/*font-family: 'Basic', sans-serif;*/
 	font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+	margin-top: 100px;
 }
 
 .navbar {
 	background: #000000;
 	text-shadow: 2px 2px #FFF8DC;
 	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	position: absolute;
+}
+
+.navbar li {
+	margin-top: 15px;
 }
 
 .user_img {
